@@ -21,7 +21,7 @@ public class Director {
                 .setEngine(new EngineBuilder()
                         .setFuelType("Diesel")
                         .setTorque(400)
-                        .setVolume(1.8) // Исправлено с 180 на 1.8
+                        .setVolume(1.8) 
                         .setPower(300)
                         .build())
                 .setTransmission(new TransmissionBuilder()
@@ -30,7 +30,7 @@ public class Director {
                         .build())
                 .setWheels(new WheelBuilder()
                         .setDiameter(22)
-                        .setMaterial("Alloy") // Исправлено "Rubber" → "Alloy"
+                        .setMaterial("Alloy") 
                         .build())
                 .setColor(color)
                 .setTires(tires)
@@ -44,7 +44,7 @@ public class Director {
                 .setEngine(new EngineBuilder()
                         .setFuelType("Petrol")
                         .setTorque(350)
-                        .setVolume(1.2) // Исправлено с 120 на 1.2
+                        .setVolume(1.2) 
                         .setPower(200)
                         .build())
                 .setTransmission(new TransmissionBuilder()
@@ -53,7 +53,7 @@ public class Director {
                         .build())
                 .setWheels(new WheelBuilder()
                         .setDiameter(16)
-                        .setMaterial("Alloy") // Исправлено "Rubber" → "Alloy"
+                        .setMaterial("Alloy") 
                         .build())
                 .setColor(color)
                 .setTires(tires)
