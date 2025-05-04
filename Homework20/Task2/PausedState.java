@@ -1,0 +1,42 @@
+package Homework20.Task2;
+
+public class PausedState implements State {
+    @Override
+    public void play(MediaPlayer mediaPlayer) {
+        mediaPlayer.setState(new PlayingState());
+        System.out.println("Resumed track: " + mediaPlayer.getCurrentTrack());
+    }
+
+    @Override
+    public void pause(MediaPlayer mediaPlayer) {
+        System.out.println("Already paused track: " + mediaPlayer.getCurrentTrack());
+    }
+
+    @Override
+    public void next(MediaPlayer mediaPlayer) {
+        if (mediaPlayer.getCurrentTrackNum() < mediaPlayer.getTracks().size() - 1) {
+            mediaPlayer.setTrackNum(mediaPlayer.getCurrentTrackNum() + 1);
+            System.out.println("Playing next track: " + mediaPlayer.getCurrentTrack());
+            mediaPlayer.setState(new PlayingState());
+        } else {
+            System.out.println("Already playing the last track");
+        }
+    }
+
+    @Override
+    public void prev(MediaPlayer mediaPlayer) {
+        if (mediaPlayer.getCurrentTrackNum() > 0) {
+            mediaPlayer.setTrackNum(mediaPlayer.getCurrentTrackNum() - 1);
+            System.out.println("Playing previous track: " + mediaPlayer.getCurrentTrack());
+            mediaPlayer.setState(new PlayingState());
+        } else {
+            System.out.println("Already playing the first track");
+        }
+    }
+
+    @Override
+    public void stop(MediaPlayer mediaPlayer) {
+        mediaPlayer.setState(new StoppedState());
+        System.out.println("Stopped track: " + mediaPlayer.getCurrentTrack());
+    }
+}
